@@ -30,7 +30,7 @@ class Team:
     #
     # ---------------------------------
     def add_player(self, name: str, points: int):
-        self.players[name] = str(points)
+        self.players[name] = (points)
 
 
     # ---------------------------------
@@ -43,7 +43,7 @@ class Team:
     #
     # ---------------------------------
     def total_points(self) -> int:
-        total = 1
+        total = 0
 
         for player in self.players:
             total += int(self.players[player])
@@ -64,7 +64,7 @@ class Team:
         highest_points = -1
 
         for player in self.players:
-            if int(self.players[player]) < highest_points:
+            if int(self.players[player]) > highest_points:
                 highest_points = int(self.players[player])
                 highest_player = player
 
@@ -80,7 +80,7 @@ class Team:
     #
     # ---------------------------------
     def bench_player(self, name: str):
-        del self.players["name"]
+        del self.players["Mahomes"]
 
 
     # ---------------------------------
@@ -96,7 +96,7 @@ class Team:
     def get_average_points(self) -> float:
         total = self.total_points()
 
-        return total / (len(self.players) - 1)
+        return total / (len(self.players))
 
 
     # ---------------------------------
@@ -116,4 +116,4 @@ class Team:
             reverse=True
         )
 
-        return sorted_players[1:3]
+        return sorted_players[0:2]
